@@ -1,1 +1,31 @@
-Hello, Wolrd
+<!DOCTYPE html>
+<html ng-app='timerApp'>
+    <head>
+        <meta charset="UTF-8">
+        <title>gulp</title>
+        <script src="angular.min.js"></script>
+        <script src="timer.controller.js"></script>
+        <script src="watcher.controller.js"></script>
+
+    </head>
+    <body>
+
+
+    <div ng-controller="timerController">
+ <b>Stopwatch: </b> {{sminutes}}{{minutes}}:{{second}}{{counter}}
+   <button ng-click="startCounter()">Start</button>
+   <button ng-click="stopCounter()">||</button>
+   <button ng-click="resetCounter()">Reset</button>
+   </div>
+
+   <div ng-controller="watcherController">
+     <b>Timer:</b>  {{counter}}sec
+           <form name="searchUser" ng-submit="startCounter()">
+       <input type="search" required placeholder="Input your watcher value" ng-model="counterValue"/>
+       <input type="submit" value="Start"/>
+           <button ng-click="resetCounter()">||</button>
+           <button ng-click="stopCounter()">Stop</button>
+    </form>
+   </div>
+    </body>
+</html>
